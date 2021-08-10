@@ -12,7 +12,7 @@ router.route("/").post(
           "Content-Type": "application/json;charset=utf-8",
         },
       })
-      .post(req.query.url, req.body)
+      [req.query.type](req.query.url, req.body)
       .then((resp) => {
         res.status(resp.status).json(resp.data);
       });
